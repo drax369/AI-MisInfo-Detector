@@ -32,9 +32,13 @@
 
 ### Main Interface
 > Futuristic dark UI with animated particle background and AI robot mascot
+> <img width="1886" height="1015" alt="Screenshot 2026-03-28 233508" src="https://github.com/user-attachments/assets/0bb37e59-e710-4ac2-9d80-7da038b65a65" />
+
 
 ### Analysis Result
 > Credibility score circle, verdict badge, red flags, sources used, and language toggle
+><img width="1246" height="891" alt="Screenshot 2026-03-29 024310" src="https://github.com/user-attachments/assets/a547d2cf-8b9e-42ab-9314-dfb22532d997" />
+ 
 
 ---
 
