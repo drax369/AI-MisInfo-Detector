@@ -20,7 +20,7 @@ function SharePage({ id }) {
           setLoading(false);
           return;
         }
-        const res = await axios.get(`http://localhost:5000/api/history/${id}`);
+        const res = await axios.get(`https://ai-misinfo-detector.onrender.com/api/history/${id}`);
         setResult(res.data);
       } catch (err) {
         setError('Analysis not found or link has expired.');

@@ -13,7 +13,12 @@ const PORT = process.env.PORT || 5000;
 
 connectDB();
 
-app.use(cors({ origin: 'http://localhost:3000' }));
+app.use(cors({
+  origin: [
+    'http://localhost:3000',
+    'https://ai-misinfo-detector.vercel.app'
+  ]
+}));
 app.use(express.json());
 
 app.use('/api/analyze', analyzeRoute);

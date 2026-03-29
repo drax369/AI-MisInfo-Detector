@@ -17,7 +17,7 @@ function History({ onSelect }) {
 
   const fetchHistory = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/history');
+      const res = await axios.get('https://ai-misinfo-detector.onrender.com/api/history');
       setHistory(res.data);
     } catch (err) {
       console.error('Failed to fetch history');
@@ -29,7 +29,7 @@ function History({ onSelect }) {
   const handleDelete = async (id, e) => {
     e.stopPropagation();
     try {
-      await axios.delete(`http://localhost:5000/api/history/${id}`);
+      await axios.delete(`https://ai-misinfo-detector.onrender.com/api/history/${id}`);
       setHistory(history.filter(h => h._id !== id));
     } catch (err) {
       console.error('Failed to delete');

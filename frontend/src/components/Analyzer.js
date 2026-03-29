@@ -118,7 +118,7 @@ function Analyzer() {
           // Multiple images
           const formData = new FormData();
           files.forEach(f => formData.append('files', f));
-          response = await axios.post('http://localhost:5000/api/upload/multiple', formData, {
+          response = await axios.post('https://ai-misinfo-detector.onrender.com/api/upload/multiple', formData, {
             headers: { 'Content-Type': 'multipart/form-data' },
           });
           setResults(response.data.results);
@@ -128,7 +128,7 @@ function Analyzer() {
           // Single file
           const formData = new FormData();
           formData.append('file', files[0]);
-          response = await axios.post('http://localhost:5000/api/upload', formData, {
+          response = await axios.post('https://ai-misinfo-detector.onrender.com/api/upload', formData, {
             headers: { 'Content-Type': 'multipart/form-data' },
           });
           if (response.data.extractedText) {
@@ -136,11 +136,11 @@ function Analyzer() {
           }
         }
       } else if (activeTab === 'URL' && content.trim()) {
-        response = await axios.post('http://localhost:5000/api/analyze-url', {
+        response = await axios.post('https://ai-misinfo-detector.onrender.com/api/analyze-url', {
           url: content.trim(),
         });
       } else if (content.trim()) {
-        response = await axios.post('http://localhost:5000/api/analyze', { content });
+        response = await axios.post('https://ai-misinfo-detector.onrender.com/api/analyze', { content });
       } else {
         setError('Please enter content or upload a file.');
         setLoading(false);
