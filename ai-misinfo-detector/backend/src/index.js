@@ -16,7 +16,7 @@ connectDB();
 app.use(cors({
   origin: [
     'http://localhost:3000',
-    'https://ai-misinfo-detector.vercel.app'
+    'https://misinfo-detector-app.vercel.app'
   ]
 }));
 app.use(express.json());
