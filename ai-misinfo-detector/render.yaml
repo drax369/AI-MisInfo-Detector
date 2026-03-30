@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: ai-misinfo-detector
+    env: node
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: node src/index.js
+    headers:
+      - path: /*
+        name: Access-Control-Allow-Origin
+        value: "*"
