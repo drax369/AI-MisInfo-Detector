@@ -170,13 +170,13 @@ ai-misinfo-detector/
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| POST | `/api/analyze` | Analyze text content |
-| POST | `/api/analyze-url` | Scrape and analyze a URL |
-| POST | `/api/upload` | Upload and analyze a file |
-| POST | `/api/upload/multiple` | Upload multiple images |
-| GET | `/api/history` | Get analysis history |
-| GET | `/api/history/:id` | Get single analysis by ID |
-| DELETE | `/api/history/:id` | Delete an analysis |
+| POST | `https://ai-misinfo-detector.onrender.com/api/analyze` | Analyze text content |
+| POST | `https://ai-misinfo-detector.onrender.com/api/analyze-url` | Scrape and analyze a URL |
+| POST | `https://ai-misinfo-detector.onrender.com/api/upload` | Upload and analyze a file |
+| POST | `https://ai-misinfo-detector.onrender.com/api/upload/multiple` | Upload multiple images |
+| GET | `https://ai-misinfo-detector.onrender.com/api/history` | Get analysis history |
+| GET | `https://ai-misinfo-detector.onrender.com/api/history/:id` | Get single analysis by ID |
+| DELETE | `https://ai-misinfo-detector.onrender.com/api/history/:id` | Delete an analysis |
 
 ---
 

@@ -27,10 +27,10 @@ app.use((req, res, next) => {
 app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ extended: true }));
 
-app.use('/api/analyze', analyzeRoute);
-app.use('/api/analyze-url', analyzeUrlRoute);
-app.use('/api/upload', uploadRoute);
-app.use('/api/history', historyRoute);
+app.use('https://ai-misinfo-detector.onrender.com/api/analyze', analyzeRoute);
+app.use('https://ai-misinfo-detector.onrender.com/api/analyze-url', analyzeUrlRoute);
+app.use('https://ai-misinfo-detector.onrender.com/api/upload', uploadRoute);
+app.use('https://ai-misinfo-detector.onrender.com/api/history', historyRoute);
 
 app.get('/', (req, res) => {
   res.json({ message: 'AI Misinfo Detector API is running!' });
