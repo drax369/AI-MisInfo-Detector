@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 require('dotenv').config();
 const connectDB = require('./config/db');
 
@@ -12,25 +13,23 @@ const PORT = process.env.PORT || 5000;
 
 connectDB();
 
-app.use((req, res, next) => {
-  const origin = req.headers.origin;
-  res.setHeader('Access-Control-Allow-Origin', origin || '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS, PATCH');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Requested-With');
-  res.setHeader('Access-Control-Allow-Credentials', 'false');
-  if (req.method === 'OPTIONS') {
-    return res.status(204).end();
-  }
-  next();
-});
+const corsOptions = {
+  origin: '*',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  optionsSuccessStatus: 200
+};
+
+app.options('*', cors(corsOptions));
+app.use(cors(corsOptions));
 
 app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ extended: true }));
 
-app.use('https://ai-misinfo-detector.onrender.com/api/analyze', analyzeRoute);
-app.use('https://ai-misinfo-detector.onrender.com/api/analyze-url', analyzeUrlRoute);
-app.use('https://ai-misinfo-detector.onrender.com/api/upload', uploadRoute);
-app.use('https://ai-misinfo-detector.onrender.com/api/history', historyRoute);
+app.use('/api/analyze', analyzeRoute);
+app.use('/api/analyze-url', analyzeUrlRoute);
+app.use('/api/upload', uploadRoute);
+app.use('/api/history', historyRoute);
 
 app.get('/', (req, res) => {
   res.json({ message: 'AI Misinfo Detector API is running!' });
