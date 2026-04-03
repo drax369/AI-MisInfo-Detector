@@ -14,10 +14,12 @@ const PORT = process.env.PORT || 5000;
 connectDB();
 
 const corsOptions = {
-  origin: '*',
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  origin: function(origin, callback) {
+    callback(null, true);
+  },
+  methods: ['GET', 'POST', 'PUT, DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
-  optionsSuccessStatus: 200
+  optionsSuccessStatus: 204
 };
 
 app.options('*', cors(corsOptions));
