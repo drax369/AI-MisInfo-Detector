@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "https://ai-misinfo-detector.onrender.com/api/$1"
+    }
+  ]
+}
