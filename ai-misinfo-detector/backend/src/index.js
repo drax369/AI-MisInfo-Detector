@@ -23,13 +23,15 @@ app.use('/api/analyze-url', analyzeUrlRoute);
 app.use('/api/upload', uploadRoute);
 app.use('/api/history', historyRoute);
 
-app.use(express.static(path.join(__dirname, '../../frontend/build')));
+const buildPath = path.join(__dirname, '../../frontend/build');
+console.log('Serving static from:', buildPath);
+
+app.use(express.static(buildPath));
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../../frontend/build', 'index.html'));
+  res.sendFile(path.join(buildPath, 'index.html'));
 });
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
-  console.log('Static path:', path.join(__dirname, '../../frontend/build'));
 });
