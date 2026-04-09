@@ -30,7 +30,7 @@ router.post('/', async (req, res) => {
 
     // Save to DB non-blocking
     Analysis.create({
-      content: `[URL] ${url} — ${scraped.title}`.slice(0, 500),
+      content: `[URL] ${url} - ${scraped.title}`.slice(0, 500),
       credibilityScore: result.credibilityScore,
       verdict: result.verdict,
       redFlags: result.redFlags,
